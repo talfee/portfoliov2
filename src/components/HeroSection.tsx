@@ -1,21 +1,8 @@
 import { motion } from "motion/react";
-import Dither from "./Dither";
 
 export function HeroSection() {
   return (
     <section className="relative h-screen w-full overflow-hidden bg-transparent">
-      <div className="absolute inset-0 z-0" style={{ width: "100%", height: "100%" }}>
-        <Dither
-          waveColor={[0.5, 0.5, 0.5]}
-          disableAnimation={false}
-          enableMouseInteraction={true}
-          mouseRadius={0.3}
-          colorNum={4}
-          waveAmplitude={0.3}
-          waveFrequency={3}
-          waveSpeed={0.05}
-        />
-      </div>
 
       <div className="relative z-10 flex h-full items-center justify-center">
         <motion.div
