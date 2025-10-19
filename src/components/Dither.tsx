@@ -92,7 +92,9 @@ void main() {
     mouseNDC.x *= resolution.x / resolution.y;
     float dist = length(uv - mouseNDC);
     float effect = 1.0 - smoothstep(0.0, mouseRadius, dist);
-    f -= 0.5 * effect;
+    // Make the area near the mouse brighter rather than darker
+    f += 0.5 * effect;
+    f = clamp(f, 0.0, 1.0);
   }
   vec3 col = mix(vec3(0.0), waveColor, f);
   gl_FragColor = vec4(col, 1.0);
