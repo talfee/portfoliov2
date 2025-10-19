@@ -38,8 +38,8 @@ export function HeroSection() {
       
       // Fade from 100% to 40% starting right after hero
       // Reach 40% by the time IntroSection paragraph is visible (around 1.2 viewport heights)
-      const fadeStart = viewportHeight * 0.8; // Start fading near end of hero
-      const fadeEnd = viewportHeight * 1.2; // Finish fade when intro text is visible
+      const fadeStart = viewportHeight * 0.4; // Start fading near end of hero
+      const fadeEnd = viewportHeight * 0.9; // Finish fade when intro text is visible
       
       if (scrollY < fadeStart) {
         scrollOpacityRef.current = 1;
@@ -61,10 +61,10 @@ export function HeroSection() {
       initializeCells();
     };
     
-    const lightChars = "+-=/:ilta7";
-    const denseChars = "#@$%6TALI";
+    const lightChars = "taliafeng";
+    const denseChars = "TALIAFENG";
     const allChars = lightChars + denseChars;
-    const fontSize = 12;
+    const fontSize = 18;
     
     const initializeCells = () => {
       const cells: ASCIICell[] = [];

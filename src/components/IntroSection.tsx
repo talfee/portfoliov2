@@ -13,11 +13,12 @@ export function IntroSection() {
         <p className="text-white/90 mb-6" style={{ fontSize: "0.95rem", fontWeight: 300, lineHeight: 1.5, letterSpacing: "-0.01em" }}>
             Professionally, my interests lie in 
             creating useful applications (web and mobile) and working with data 
-            (ML, bioinformatics, being an SQL monkey)!
+            (ML, bioinformatics, being an SQL monkey)! I enjoy transforming large amounts of data into
+            useable, insightful apps.
           </p>
           <p className="text-white/90 mb-6" style={{ fontSize: "0.95rem", fontWeight: 300, lineHeight: 1.5, letterSpacing: "-0.01em" }}>
             Personally, I enjoy reading, running, photography, and trying new food. 
-            I'm a huge foodie so feel free to reach out to me anytime, I would love to connect over a donut :D
+            I'm currently working in Toronto so feel free to connect if you're in the area.
           </p>
       </motion.div>
     </section>
