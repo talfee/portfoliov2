@@ -386,12 +386,12 @@ export default function FaultyTerminal({
     rafRef.current = requestAnimationFrame(update);
     ctn.appendChild(gl.canvas);
 
-    if (mouseReact) ctn.addEventListener('mousemove', handleMouseMove as any);
+    if (mouseReact) window.addEventListener('mousemove', handleMouseMove as any, { passive: true } as any);
 
     return () => {
       cancelAnimationFrame(rafRef.current);
       resizeObserver.disconnect();
-      if (mouseReact) ctn.removeEventListener('mousemove', handleMouseMove as any);
+      if (mouseReact) window.removeEventListener('mousemove', handleMouseMove as any);
       if ((gl.canvas as any).parentElement === ctn) ctn.removeChild(gl.canvas as any);
       (gl as any).getExtension('WEBGL_lose_context')?.loseContext();
       loadAnimationStartRef.current = 0;
@@ -421,4 +421,3 @@ export default function FaultyTerminal({
 
   return <div ref={containerRef} className={`faulty-terminal-container ${className}`} style={style} {...rest} />;
 }
-

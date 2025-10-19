@@ -23,7 +23,7 @@ export function HeroSection() {
         mouseReact={true}
         mouseStrength={1}
         pageLoadAnimation={false}
-        brightness={0.25}
+        brightness={0.4}
       />
 
       <div className="relative z-10 flex h-full items-center justify-center">
