@@ -1,30 +1,21 @@
 import { motion } from "motion/react";
-import FaultyTerminal from "./FaultyTerminal";
+import Dither from "./Dither";
 
 export function HeroSection() {
   return (
     <section className="relative h-screen w-full overflow-hidden bg-transparent">
-      <FaultyTerminal
-        className="absolute inset-0 z-0 pointer-events-none"
-        style={{ width: "100%", height: "100%", position: "absolute" }}
-        scale={1.5}
-        gridMul={[2, 1]}
-        digitSize={1.2}
-        timeScale={1}
-        pause={false}
-        scanlineIntensity={0}
-        glitchAmount={1}
-        flickerAmount={1}
-        noiseAmp={1}
-        chromaticAberration={0}
-        dither={0}
-        curvature={0}
-        tint="#ffffffff"
-        mouseReact={true}
-        mouseStrength={1}
-        pageLoadAnimation={false}
-        brightness={0.4}
-      />
+      <div className="absolute inset-0 z-0" style={{ width: "100%", height: "100%" }}>
+        <Dither
+          waveColor={[0.5, 0.5, 0.5]}
+          disableAnimation={false}
+          enableMouseInteraction={true}
+          mouseRadius={0.3}
+          colorNum={4}
+          waveAmplitude={0.3}
+          waveFrequency={3}
+          waveSpeed={0.05}
+        />
+      </div>
 
       <div className="relative z-10 flex h-full items-center justify-center">
         <motion.div
