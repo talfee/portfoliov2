@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import Dither from "./Dither";
+import { useEffect, useState } from 'react';
+import Dither from './Dither';
 
 type Props = {
   minOpacity?: number; // opacity after passing the hero (0..1)
@@ -44,19 +44,19 @@ export default function GlobalBackground({
       });
     };
     onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
     return () => {
       if (raf) cancelAnimationFrame(raf);
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
     };
   }, [minOpacity, fadeDistanceVh]);
 
   return (
     <div
       className="fixed inset-0 -z-10 pointer-events-none"
-      style={{ opacity, transition: "opacity 300ms ease", willChange: "opacity" }}
+      style={{ opacity, transition: 'opacity 300ms ease', willChange: 'opacity' }}
     >
       <Dither
         waveColor={waveColor}
@@ -71,4 +71,3 @@ export default function GlobalBackground({
     </div>
   );
 }
-

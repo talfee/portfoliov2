@@ -18,4 +18,3 @@ declare module 'ogl' {
     constructor(gl: WebGLRenderingContext);
   }
 }
-

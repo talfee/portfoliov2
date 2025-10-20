@@ -1,18 +1,22 @@
-import { motion } from "motion/react";
+import { motion } from 'motion/react';
 
 export function HeroSection() {
   return (
     <section className="relative h-screen w-full overflow-hidden bg-transparent">
-
       <div className="relative z-10 flex h-full items-center justify-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
+          transition={{ duration: 1.5, ease: 'easeOut' }}
           className="text-center"
         >
           <motion.h1
-            style={{ fontSize: "clamp(3rem, 12vw, 10rem)", fontWeight: 300, lineHeight: 0.9, letterSpacing: "-0.03em" }}
+            style={{
+              fontSize: 'clamp(3rem, 12vw, 10rem)',
+              fontWeight: 300,
+              lineHeight: 0.9,
+              letterSpacing: '-0.03em',
+            }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 2, delay: 0.3 }}
@@ -30,12 +34,14 @@ export function HeroSection() {
           duration: 1,
           delay: 2,
           repeat: Infinity,
-          repeatType: "reverse",
+          repeatType: 'reverse',
           repeatDelay: 0.5,
         }}
       >
         <div className="flex flex-col items-center gap-2">
-          <span style={{ fontSize: "0.75rem", fontWeight: 300, letterSpacing: "0.05em" }}>scroll</span>
+          <span style={{ fontSize: '0.75rem', fontWeight: 300, letterSpacing: '0.05em' }}>
+            scroll
+          </span>
           <div className="w-px h-16 bg-white" />
         </div>
       </motion.div>
