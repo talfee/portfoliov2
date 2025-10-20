@@ -25,6 +25,20 @@ const experiences: Experience[] = [
     tags: ["mobile", "architecture", "backend"],
   },
   {
+    year: "2025",
+    title: "mobile app developer intern",
+    company: "g&a robot",
+    description: "here i built mobile apps in C# with .NET MAUI and used Azure for deployment, querying databases, and creating cloud services.",
+    tags: ["mobile", "architecture", "backend"],
+  },
+  {
+    year: "2025",
+    title: "volunteer software developer",
+    company: "ubc launchpad",
+    description: "I am a volunteer dev building a staff management system for the BC Brain Wellness Program.",
+    tags: ["databases", "fullstack", "backend"],
+  },
+  {
     year: "2023",
     title: "computer science teaching assistant",
     company: "ubc department of cs",
