@@ -19,14 +19,14 @@ export function IntroSection() {
             letterSpacing: '-0.01em',
           }}
         >
-          Most of my information is on my <a
+          Hello there! Thanks for visiting my website. Most of my information is on my <a
             href="https://www.linkedin.com/in/talfe/"
             target="_blank"
             rel="noopener noreferrer"
             className="underline underline-offset-4 decoration-transparent hover:decoration-current text-white/80 hover:text-white transition-colors transition-[text-decoration-color] duration-300"
           >
             Linkedin
-          </a> already. But here are some things that aren't:
+          </a> already, so here are some things that aren't:
         </p>
         <p
           className="text-white/90 mb-6"
