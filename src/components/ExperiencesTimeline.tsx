@@ -35,6 +35,14 @@ const experiences: Experience[] = [
     tags: ['databases', 'fullstack', 'backend'],
   },
   {
+    year: '2025',
+    title: 'volunteer web developer',
+    company: 'ubc science undergraduate society',
+    description:
+      'I am a volunteer dev building a staff management system for the BC Brain Wellness Program.',
+    tags: ['project management', 'data engineering', 'backend'],
+  },
+  {
     year: '2023',
     title: 'computer science teaching assistant',
     company: 'ubc department of cs',
@@ -43,12 +51,20 @@ const experiences: Experience[] = [
     tags: ['algorithms', 'communnication', 'teaching'],
   },
   {
+    year: '2023',
+    title: 'student researcher',
+    company: 'ubc bioproducts institute',
+    description:
+      'Selected to be a student researcher at ubc bioproducts, an institute that focuses on creating and testing new materials from biological processes. worked on propogating bacteria to grow and process biofilms that can replace plastic packacing. Published in MURC.',
+    tags: ['project management', 'communnication', 'research'],
+  },
+  {
     year: '2022',
-    title: 'wetlab researcher',
+    title: 'wetlab + computational researcher',
     company: 'ubc biomod design team',
     description:
-      'Contributed to research around creating DNA origami nanostuctures for therapeutic usages. Published in MURC ',
-    tags: ['algorithms', 'communnication', 'teaching'],
+      'Contributed to research around creating DNA origami nanostuctures for therapeutic usages. Published in MURC and presented at the international BIOMOD Jamboree 2024.',
+    tags: ['project management', 'presenting', 'python'],
   },
 ];
 
