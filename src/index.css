@@ -407,6 +407,9 @@
 }
 
 @layer utilities {
+  .underline { text-decoration-line: underline; }
+  .decoration-current { text-decoration-color: currentColor; }
+  .underline-offset-4 { text-underline-offset: 4px; }
   .pointer-events-none {
     pointer-events: none;
   }

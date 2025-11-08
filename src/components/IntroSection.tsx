@@ -44,7 +44,7 @@ export function IntroSection() {
             href="https://www.strava.com/athletes/132741723"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline underline-offset-4 decoration-transparent hover:decoration-current text-white/80 hover:text-white transition-colors transition-[text-decoration-color] duration-300"
+            className="underline underline-offset-4 decoration-current text-white/80 hover:text-white transition-colors duration-300"
           >
             my strava
           </a>
@@ -58,7 +58,7 @@ export function IntroSection() {
             href="https://www.goodreads.com/user/show/74831519-talfee"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline underline-offset-4 decoration-transparent hover:decoration-current text-white/80 hover:text-white transition-colors transition-[text-decoration-color] duration-300"
+            className="underline underline-offset-4 decoration-current text-white/80 hover:text-white transition-colors duration-300"
           >
             my goodreads
           </a>
