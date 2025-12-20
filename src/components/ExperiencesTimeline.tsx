@@ -39,7 +39,7 @@ const experiences: Experience[] = [
     title: 'volunteer web developer',
     company: 'ubc science undergraduate society',
     description:
-      'I am a volunteer dev building a staff management system for the BC Brain Wellness Program.',
+      'I was a volunteer dev building a degree map of courses for ubc science students.',
     tags: ['project management', 'data engineering', 'backend'],
   },
   {
@@ -47,7 +47,7 @@ const experiences: Experience[] = [
     title: 'computer science teaching assistant',
     company: 'ubc department of cs',
     description:
-      'A super rewarding job involving hosting office hours to answer questions and teaching tutorials.',
+      'A rewarding job involving hosting office hours to answer questions and teaching tutorials.',
     tags: ['algorithms', 'communnication', 'teaching'],
   },
   {
