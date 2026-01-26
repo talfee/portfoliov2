@@ -11,6 +11,14 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
+    year: '2026',
+    title: 'software engineering intern',
+    company: 'CIBC',
+    description:
+      'i am currently working on a project to develop an AI powered incident management tool for Azure data platforms, utilizing retrieval-augmented generation to automate runbook retrieval.',
+    tags: ['databases', 'azure', 'fullstack'],
+  },
+  {
     year: '2025',
     title: 'software engineering intern',
     company: 'TD',
