@@ -52,7 +52,7 @@ const experiences: Experience[] = [
   },
   {
     year: '2023',
-    title: 'computer science teaching assistant',
+    title: 'teaching assistant',
     company: 'ubc department of cs',
     description:
       'A rewarding job involving hosting office hours to answer questions and teaching tutorials.',
