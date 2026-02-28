@@ -117,7 +117,7 @@ function ExperienceCard({
               className="block"
               style={{
                 fontSize: '5rem',
-                fontWeight: 300,
+                fontWeight: 400,
                 lineHeight: 0.9,
                 letterSpacing: '-0.03em',
                 fontVariantNumeric: 'tabular-nums',
@@ -140,13 +140,13 @@ function ExperienceCard({
             <div className="min-w-0">
               <h3
                 className="mb-2 break-words"
-                style={{ fontSize: '1.75rem', fontWeight: 300, letterSpacing: '-0.02em' }}
+                style={{ fontSize: '1.75rem', fontWeight: 400, letterSpacing: '-0.02em' }}
               >
                 {experience.title}
               </h3>
               <p
                 className="text-white/60 break-words"
-                style={{ fontSize: '1.125rem', fontWeight: 300, letterSpacing: '-0.01em' }}
+                style={{ fontSize: '1.125rem', fontWeight: 400, letterSpacing: '-0.01em' }}
               >
                 {experience.company}
               </p>
@@ -156,7 +156,7 @@ function ExperienceCard({
               className="text-white/80 break-words min-w-0"
               style={{
                 fontSize: '1rem',
-                fontWeight: 300,
+                fontWeight: 400,
                 lineHeight: 1.8,
                 letterSpacing: '-0.01em',
               }}
@@ -173,7 +173,7 @@ function ExperienceCard({
                   transition={reduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.6 + i * 0.1 }}
                   viewport={reduceMotion ? undefined : { once: true }}
                   className="border border-white/30 px-4 py-2 break-words min-w-0"
-                  style={{ fontSize: '0.75rem', fontWeight: 300, letterSpacing: '0.05em' }}
+                  style={{ fontSize: '0.75rem', fontWeight: 400, letterSpacing: '0.05em' }}
                 >
                   {tag}
                 </motion.span>
@@ -212,7 +212,7 @@ export function ExperiencesTimeline({ reduceMotion = false }: { reduceMotion?: b
           <h2
             style={{
               fontSize: 'clamp(3rem, 8vw, 6rem)',
-              fontWeight: 300,
+              fontWeight: 400,
               lineHeight: 0.9,
               letterSpacing: '-0.03em',
             }}
@@ -241,7 +241,7 @@ export function ExperiencesTimeline({ reduceMotion = false }: { reduceMotion?: b
         >
           <p
             className="text-white/40"
-            style={{ fontSize: '0.875rem', fontWeight: 300, letterSpacing: '0.1em' }}
+            style={{ fontSize: '0.875rem', fontWeight: 400, letterSpacing: '0.1em' }}
           >
             end of timeline
           </p>

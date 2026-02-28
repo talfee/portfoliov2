@@ -211,7 +211,7 @@
 html {
   font-size: var(--font-size);
   font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: -0.02em;
   scroll-behavior: smooth;
   color-scheme: dark;

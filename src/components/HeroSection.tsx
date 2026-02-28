@@ -26,7 +26,7 @@ export function HeroSection({ reduceMotion = false }: Props) {
           <motion.h1
             style={{
               fontSize: 'clamp(3rem, 12vw, 10rem)',
-              fontWeight: 300,
+              fontWeight: 400,
               lineHeight: 0.9,
               letterSpacing: '-0.03em',
             }}
@@ -47,7 +47,7 @@ export function HeroSection({ reduceMotion = false }: Props) {
         aria-hidden="true"
       >
         <div className="flex flex-col items-center gap-2">
-          <span style={{ fontSize: '0.75rem', fontWeight: 300, letterSpacing: '0.05em' }}>
+          <span style={{ fontSize: '0.75rem', fontWeight: 400, letterSpacing: '0.05em' }}>
             scroll
           </span>
           <div className="w-px h-16 bg-white" />

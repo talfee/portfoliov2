@@ -19,7 +19,7 @@ export function IntroSection({ reduceMotion = false }: Props) {
           className="text-white/90 mb-6 break-words"
           style={{
             fontSize: '0.95rem',
-            fontWeight: 300,
+            fontWeight: 400,
             lineHeight: 1.5,
             letterSpacing: '-0.01em',
           }}
@@ -37,7 +37,7 @@ export function IntroSection({ reduceMotion = false }: Props) {
           className="text-white/90 mb-6 list-disc pl-6 break-words"
           style={{
             fontSize: '0.95rem',
-            fontWeight: 300,
+            fontWeight: 400,
             lineHeight: 1.5,
             letterSpacing: '-0.01em',
           }}
@@ -103,7 +103,7 @@ export function IntroSection({ reduceMotion = false }: Props) {
           className="text-white/90 mb-6 break-words"
           style={{
             fontSize: '0.95rem',
-            fontWeight: 300,
+            fontWeight: 400,
             lineHeight: 1.5,
             letterSpacing: '-0.01em',
           }}
@@ -114,7 +114,7 @@ export function IntroSection({ reduceMotion = false }: Props) {
           className="text-white/90 mb-6 break-words"
           style={{
             fontSize: '0.95rem',
-            fontWeight: 300,
+            fontWeight: 400,
             lineHeight: 1.5,
             letterSpacing: '-0.01em',
           }}
