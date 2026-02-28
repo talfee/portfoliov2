@@ -1,17 +1,22 @@
+import React from 'react';
 import { motion } from 'motion/react';
 
-export function IntroSection() {
+type Props = { reduceMotion?: boolean };
+
+export function IntroSection({ reduceMotion = false }: Props) {
+  const transition = reduceMotion ? { duration: 0 } : { duration: 1.2, ease: 'easeOut' as const };
+
   return (
     <section className="min-h-screen bg-transparent flex items-center justify-center px-6 py-32">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2, ease: 'easeOut' }}
+        transition={transition}
         viewport={{ once: true, margin: '-100px' }}
         className="max-w-3xl"
       >
         <p
-          className="text-white/90 mb-6"
+          className="text-white/90 mb-6 break-words"
           style={{
             fontSize: '0.95rem',
             fontWeight: 300,
@@ -29,7 +34,7 @@ export function IntroSection() {
           </a>, so here are some things about me that aren't: 
         </p>
         <ul
-          className="text-white/90 mb-6 list-disc pl-6"
+          className="text-white/90 mb-6 list-disc pl-6 break-words"
           style={{
             fontSize: '0.95rem',
             fontWeight: 300,
@@ -54,7 +59,7 @@ export function IntroSection() {
             ).
           </li>
           <li className="mb-2">
-            i like to think my academic detours (presenting at{' '}
+          my academic detours (presenting at{' '}
             <a
               href="https://mcells.ubc.ca/news/may-05-2025/ubc-biomod-team-shines-2024-biomod-jamboree"
               target="_blank"
@@ -65,15 +70,14 @@ export function IntroSection() {
             </a>{' '}
             and publishing{' '}
             <a
-              href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://cjur.ca/wp-content/uploads/2024/09/MURCxCJUR_2024.pdf"
+              href="https://cjur.ca/wp-content/uploads/2024/09/MURCxCJUR_2024.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="underline underline-offset-4 decoration-current text-white/80 hover:text-white transition-colors duration-300"
             >
               new research
             </a>
-            ) have instilled in me a love of building challenging projects and
-            collaborating effectively.
+            ) taught me to love hard problems and good collaboration.
           </li>
           <li className="mb-2">
             i love reading books, but i love discussing them with others
@@ -89,14 +93,14 @@ export function IntroSection() {
             ).
           </li>
           <li className="mb-2">
-            i have a british shorthair cat.
+            i parent a slightly overweight british shorthair cat.
           </li>
           <li className="mb-2">
             i chose software over biology because i'd rather problem solve sitting down in an ergonomic chair than standing up at a lab bench. (jokes. partly).
           </li>
         </ul>
         <p
-          className="text-white/90 mb-6"
+          className="text-white/90 mb-6 break-words"
           style={{
             fontSize: '0.95rem',
             fontWeight: 300,
@@ -104,7 +108,24 @@ export function IntroSection() {
             letterSpacing: '-0.01em',
           }}
         >
-          if we have anything in common, don't hesitate to reach out and connect!
+          i genuinely love meeting new people — if anything here resonated, i'd love to grab a coffee!
+        </p>
+        <p
+          className="text-white/90 mb-6 break-words"
+          style={{
+            fontSize: '0.95rem',
+            fontWeight: 300,
+            lineHeight: 1.5,
+            letterSpacing: '-0.01em',
+          }}
+        >
+          →{' '}
+          <a
+            href="mailto:taliafeng@gmail.com"
+            className="underline underline-offset-4 decoration-current text-white/80 hover:text-white transition-colors duration-300"
+          >
+            taliafeng [at] gmail [dot] com
+          </a>
         </p>
       </motion.div>
     </section>

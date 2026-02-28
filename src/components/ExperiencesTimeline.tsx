@@ -76,12 +76,28 @@ const experiences: Experience[] = [
   },
 ];
 
-function ExperienceCard({ experience, index }: { experience: Experience; index: number }) {
+function ExperienceCard({
+  experience,
+  index,
+  reduceMotion,
+}: {
+  experience: Experience;
+  index: number;
+  reduceMotion: boolean;
+}) {
+  const transition = reduceMotion ? { duration: 0 } : { duration: 1.2, ease: 'easeOut' as const };
+  const noMotion = reduceMotion
+    ? { initial: false, animate: { opacity: 1, x: 0, scale: 1 } }
+    : {
+        initial: { opacity: 0, x: index % 2 === 0 ? -100 : 100, scale: 0.9 },
+        whileInView: { opacity: 1, x: 0, scale: 1 },
+      };
+
   return (
     <motion.div
-      initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100, scale: 0.9 }}
-      whileInView={{ opacity: 1, x: 0, scale: 1 }}
-      transition={{ duration: 1.2, ease: 'easeOut' }}
+      initial={noMotion.initial as any}
+      whileInView={noMotion.whileInView as any}
+      transition={transition}
       viewport={{ once: true, margin: '-100px' }}
       className="relative mb-32"
     >
@@ -89,12 +105,13 @@ function ExperienceCard({ experience, index }: { experience: Experience; index: 
         className={`grid grid-cols-1 lg:grid-cols-2 gap-12 ${index % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}
       >
         {/* Year - Left side for even, right for odd */}
-        <div className={`${index % 2 === 0 ? 'lg:text-right' : 'lg:order-2'}`}>
+        <div className={`min-w-0 ${index % 2 === 0 ? 'lg:text-right' : 'lg:order-2'}`}>
           <motion.div
             className="inline-block"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
+            initial={reduceMotion ? false : { opacity: 0 }}
+            whileInView={reduceMotion ? undefined : { opacity: 1 }}
+            transition={reduceMotion ? { duration: 0 } : { duration: 1, delay: 0.2 }}
+            viewport={reduceMotion ? undefined : { once: true }}
           >
             <span
               className="block"
@@ -103,6 +120,7 @@ function ExperienceCard({ experience, index }: { experience: Experience; index: 
                 fontWeight: 300,
                 lineHeight: 0.9,
                 letterSpacing: '-0.03em',
+                fontVariantNumeric: 'tabular-nums',
               }}
             >
               {experience.year}
@@ -111,22 +129,23 @@ function ExperienceCard({ experience, index }: { experience: Experience; index: 
         </div>
 
         {/* Content - Right side for even, left for odd */}
-        <div className={`${index % 2 === 0 ? '' : 'lg:order-1'}`}>
+        <div className={`min-w-0 ${index % 2 === 0 ? '' : 'lg:order-1'}`}>
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.4 }}
+            initial={reduceMotion ? false : { opacity: 0 }}
+            whileInView={reduceMotion ? undefined : { opacity: 1 }}
+            transition={reduceMotion ? { duration: 0 } : { duration: 1, delay: 0.4 }}
+            viewport={reduceMotion ? undefined : { once: true }}
             className="space-y-6"
           >
-            <div>
+            <div className="min-w-0">
               <h3
-                className="mb-2"
+                className="mb-2 break-words"
                 style={{ fontSize: '1.75rem', fontWeight: 300, letterSpacing: '-0.02em' }}
               >
                 {experience.title}
               </h3>
               <p
-                className="text-white/60"
+                className="text-white/60 break-words"
                 style={{ fontSize: '1.125rem', fontWeight: 300, letterSpacing: '-0.01em' }}
               >
                 {experience.company}
@@ -134,7 +153,7 @@ function ExperienceCard({ experience, index }: { experience: Experience; index: 
             </div>
 
             <p
-              className="text-white/80"
+              className="text-white/80 break-words min-w-0"
               style={{
                 fontSize: '1rem',
                 fontWeight: 300,
@@ -145,14 +164,15 @@ function ExperienceCard({ experience, index }: { experience: Experience; index: 
               {experience.description}
             </p>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 min-w-0">
               {experience.tags.map((tag, i) => (
                 <motion.span
                   key={tag}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.6 + i * 0.1 }}
-                  className="border border-white/30 px-4 py-2"
+                  initial={reduceMotion ? false : { opacity: 0, y: 10 }}
+                  whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+                  transition={reduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.6 + i * 0.1 }}
+                  viewport={reduceMotion ? undefined : { once: true }}
+                  className="border border-white/30 px-4 py-2 break-words min-w-0"
                   style={{ fontSize: '0.75rem', fontWeight: 300, letterSpacing: '0.05em' }}
                 >
                   {tag}
@@ -167,25 +187,26 @@ function ExperienceCard({ experience, index }: { experience: Experience; index: 
       {index < experiences.length - 1 && (
         <motion.div
           className="absolute left-1/2 -bottom-16 w-px h-16 bg-white/20 -translate-x-1/2 hidden lg:block"
-          initial={{ scaleY: 0 }}
-          whileInView={{ scaleY: 1 }}
-          transition={{ duration: 1, delay: 0.8 }}
-          viewport={{ once: true }}
+          initial={{ scaleY: reduceMotion ? 1 : 0 }}
+          whileInView={reduceMotion ? undefined : { scaleY: 1 }}
+          transition={reduceMotion ? { duration: 0 } : { duration: 1, delay: 0.8 }}
+          viewport={reduceMotion ? undefined : { once: true }}
         />
       )}
     </motion.div>
   );
 }
 
-export function ExperiencesTimeline() {
+export function ExperiencesTimeline({ reduceMotion = false }: { reduceMotion?: boolean }) {
+  const transition = reduceMotion ? { duration: 0 } : { duration: 1 };
   return (
     <section className="min-h-screen bg-transparent px-6 py-32">
       <div className="max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
+          initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+          whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+          transition={transition}
+          viewport={reduceMotion ? undefined : { once: true }}
           className="pt-12 pb-32"
         >
           <h2
@@ -202,15 +223,20 @@ export function ExperiencesTimeline() {
 
         <div className="space-y-0">
           {experiences.map((experience, index) => (
-            <ExperienceCard key={experience.year} experience={experience} index={index} />
+            <ExperienceCard
+              key={`${experience.year}-${experience.company}-${index}`}
+              experience={experience}
+              index={index}
+              reduceMotion={reduceMotion}
+            />
           ))}
         </div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 2 }}
-          viewport={{ once: true }}
+          initial={reduceMotion ? false : { opacity: 0 }}
+          whileInView={reduceMotion ? undefined : { opacity: 1 }}
+          transition={reduceMotion ? { duration: 0 } : { duration: 2 }}
+          viewport={reduceMotion ? undefined : { once: true }}
           className="mt-32 pt-32 text-center"
         >
           <p

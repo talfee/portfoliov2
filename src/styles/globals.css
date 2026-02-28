@@ -129,6 +129,19 @@
   body {
     @apply bg-black text-foreground;
   }
+
+  /* Visible focus rings for keyboard users (AGENTS.md) */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  /* Touch targets: prevent double-tap zoom on interactive elements */
+  a,
+  button {
+    touch-action: manipulation;
+  }
 }
 
 /**
@@ -140,24 +153,33 @@
       font-size: var(--text-2xl);
       font-weight: var(--font-weight-medium);
       line-height: 1.5;
+      scroll-margin-top: 1rem;
     }
 
     h2 {
       font-size: var(--text-xl);
       font-weight: var(--font-weight-medium);
       line-height: 1.5;
+      scroll-margin-top: 1rem;
     }
 
     h3 {
       font-size: var(--text-lg);
       font-weight: var(--font-weight-medium);
       line-height: 1.5;
+      scroll-margin-top: 1rem;
     }
 
     h4 {
       font-size: var(--text-base);
       font-weight: var(--font-weight-medium);
       line-height: 1.5;
+      scroll-margin-top: 1rem;
+    }
+
+    h5,
+    h6 {
+      scroll-margin-top: 1rem;
     }
 
     p {
@@ -192,8 +214,24 @@ html {
   font-weight: 300;
   letter-spacing: -0.02em;
   scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
   overflow-x: hidden;
+}
+
+/* Content handling: long text and flex truncation (AGENTS.md) */
+.break-words {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+.min-w-0 {
+  min-width: 0;
 }

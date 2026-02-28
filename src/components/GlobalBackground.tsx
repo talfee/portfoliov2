@@ -57,6 +57,7 @@ export default function GlobalBackground({
     <div
       className="fixed inset-0 -z-10 pointer-events-none"
       style={{ opacity, transition: 'opacity 300ms ease', willChange: 'opacity' }}
+      aria-hidden="true"
     >
       <Dither
         waveColor={waveColor}
