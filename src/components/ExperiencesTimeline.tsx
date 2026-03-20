@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
+import { Linkedin, Github } from 'lucide-react';
 
 interface Experience {
   year: string;
@@ -56,22 +57,22 @@ const experiences: Experience[] = [
     company: 'ubc department of cs',
     description:
       'A rewarding job involving hosting office hours to answer questions and teaching tutorials.',
-    tags: ['algorithms', 'communnication', 'teaching'],
+    tags: ['algorithms', 'communication', 'teaching'],
   },
   {
     year: '2023',
     title: 'student researcher',
     company: 'ubc bioproducts institute',
     description:
-      'Selected to be a student researcher at ubc bioproducts, an institute that focuses on creating and testing new materials from biological processes. worked on propogating bacteria to grow and process biofilms that can replace plastic packacing. Published in MURC.',
-    tags: ['project management', 'communnication', 'research'],
+      'Selected to be a student researcher at ubc bioproducts, an institute that focuses on creating and testing new materials from biological processes. worked on propagating bacteria to grow and process biofilms that can replace plastic packaging. Published in MURC.',
+    tags: ['project management', 'communication', 'research'],
   },
   {
     year: '2022',
     title: 'wetlab + computational researcher',
     company: 'ubc biomod design team',
     description:
-      'Contributed to research around creating DNA origami nanostuctures for therapeutic usages. Published in MURC and presented at the international BIOMOD Jamboree 2024.',
+      'Contributed to research around creating DNA origami nanostructures for therapeutic usages. Published in MURC and presented at the international BIOMOD Jamboree 2024.',
     tags: ['project management', 'presenting', 'python'],
   },
 ];
@@ -86,8 +87,8 @@ function ExperienceCard({
   reduceMotion: boolean;
 }) {
   const transition = reduceMotion ? { duration: 0 } : { duration: 1.2, ease: 'easeOut' as const };
-  const noMotion = reduceMotion
-    ? { initial: false, animate: { opacity: 1, x: 0, scale: 1 } }
+  const motionProps = reduceMotion
+    ? { initial: false as const, animate: { opacity: 1, x: 0, scale: 1 } }
     : {
         initial: { opacity: 0, x: index % 2 === 0 ? -100 : 100, scale: 0.9 },
         whileInView: { opacity: 1, x: 0, scale: 1 },
@@ -95,8 +96,7 @@ function ExperienceCard({
 
   return (
     <motion.div
-      initial={noMotion.initial as any}
-      whileInView={noMotion.whileInView as any}
+      {...motionProps}
       transition={transition}
       viewport={{ once: true, margin: '-100px' }}
       className="relative mb-32"
@@ -245,6 +245,38 @@ export function ExperiencesTimeline({ reduceMotion = false }: { reduceMotion?: b
           >
             end of timeline
           </p>
+
+          <div className="flex items-center justify-center gap-6 mt-8">
+            <a
+              href="https://www.linkedin.com/in/talfe/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
+              className="text-white/40 hover:text-white/80 transition-colors"
+            >
+              <Linkedin size={20} />
+            </a>
+            <a
+              href="https://github.com/talfee"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub profile"
+              className="text-white/40 hover:text-white/80 transition-colors"
+            >
+              <Github size={20} />
+            </a>
+            <a
+              href="https://devpost.com/taliafeng"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Devpost profile"
+              className="text-white/40 hover:text-white/80 transition-colors"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6.002 1.61L0 12.004 6.002 22.39h11.996L24 12.004 17.998 1.61zm1.593 4.084h3.947c3.605 0 6.276 1.695 6.276 6.31 0 4.436-3.21 6.302-6.456 6.302H7.595zm2.517 2.449v7.714h1.241c2.174 0 3.863-1.159 3.863-3.882 0-2.766-1.689-3.832-3.863-3.832z" />
+              </svg>
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>
