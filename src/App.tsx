@@ -11,7 +11,7 @@ export default function App() {
     <div className="bg-transparent text-white relative">
       <a
         href="#main-content"
-        className="absolute left-4 top-4 z-[100] -translate-y-[200%] px-4 py-2 bg-white text-black transition-transform duration-150 focus:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+        className="fixed left-4 top-4 z-[100] -translate-y-[200%] px-4 py-2 bg-white text-black transition-transform duration-150 focus:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
       >
         Skip to content
       </a>
