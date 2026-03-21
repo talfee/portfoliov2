@@ -34,7 +34,7 @@ export function HeroSection({ reduceMotion = false }: Props) {
             animate={{ opacity: 1 }}
             transition={reduceMotion ? { duration: 0 } : { duration: 2, delay: 0.3 }}
           >
-            i'm tal!
+            i'm talia!
           </motion.h1>
         </motion.div>
       </div>

@@ -215,6 +215,7 @@ html {
   letter-spacing: -0.02em;
   scroll-behavior: smooth;
   color-scheme: dark;
+  background-color: #000000;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -225,6 +226,34 @@ html {
 
 body {
   overflow-x: hidden;
+}
+
+/* Skip-to-content link: hidden until focused */
+.skip-link {
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* Override any Tailwind padding/background utilities so the element has no
+     visible footprint even if the compositor drops clip-path during overscroll */
+  padding: 0;
+  background: transparent;
+}
+
+.skip-link:focus {
+  clip-path: none;
+  height: auto;
+  overflow: auto;
+  position: fixed;
+  width: auto;
+  top: 1rem;
+  left: 1rem;
+  /* Restore visual styling that was stripped from the hidden state */
+  padding: 0.5rem 1rem;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 /* Content handling: long text and flex truncation (AGENTS.md) */
