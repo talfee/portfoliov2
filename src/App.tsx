@@ -3,12 +3,14 @@ import GlobalBackground from './components/GlobalBackground';
 import { IntroSection } from './components/IntroSection';
 import { ExperiencesTimeline } from './components/ExperiencesTimeline';
 import { useReducedMotion } from './hooks/useReducedMotion';
+import { CustomCursor } from './components/CustomCursor';
 
 export default function App() {
   const reduceMotion = useReducedMotion();
 
   return (
     <div className="bg-transparent text-white relative">
+      <CustomCursor />
       <a
         href="#main-content"
         className="skip-link z-[100] focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
